@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     
     if @article.save
       flash[:notice] = "Article was successfully created"
-      redirect_to articles_path(@article)
+      redirect_to article_path(@article)
     else
       render 'new' #render the new template again
     end
