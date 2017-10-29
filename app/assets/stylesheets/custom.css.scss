@@ -1,9 +1,13 @@
 $navbar-default-bg:  #CCE0FF;
-
-
+$navbar-border-radius: 1px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+* {
+  font-family: "Courier New", Courier, monospace;
+}
 
 #logo {
   float: left;
@@ -36,12 +40,12 @@ $navbar-default-bg:  #CCE0FF;
   font-weight: bold;
 }
 
-.btn-xlarge {
-  font-size: 1.7em;
+.btn-lg {
+  font-size: 1.4em;
 }
 
-.btn-xlarge:hover {
-  background-color: #D9D9D9;
+.btn-lg:hover {
+  background-color: #CCE0FF;
 }
 
 footer {
