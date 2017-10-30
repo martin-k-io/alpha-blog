@@ -5,6 +5,9 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+  end
+
   def new
     @article = Article.new
   end
@@ -30,9 +33,6 @@ class ArticlesController < ApplicationController
     else
       render 'edit' #render the edit template again
     end
-  end
-
-  def show
   end
 
   def destroy
