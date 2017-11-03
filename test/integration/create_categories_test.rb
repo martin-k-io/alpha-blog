@@ -2,7 +2,13 @@ require 'rails-controller-testing'
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @user = User.create(username: "john", email: "john@example.com",
+                        password: "password", admin: true)
+  end
+
   test "get new category form and create category" do
+    sign_in_as(@user, "password")
     get new_category_path #user goes to the new category path
     assert_template 'categories/new' #user gets the new form
     assert_difference 'Category.count', 1 do #user posts to the new form
@@ -14,6 +20,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid category submission results in failure" do
+    sign_in_as(@user, "password")
     get new_category_path 
     assert_template 'categories/new' 
     assert_no_difference 'Category.count' do 
