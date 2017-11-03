@@ -8,19 +8,19 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
   end
 
   test "get new category form and create category" do
-    #sign_in_as(@user, "password")
-    get new_category_path #user goes to the new category path
-    assert_template 'categories/new' #user gets the new form
-    assert_difference 'Category.count', 1 do #user posts to the new form
-      post categories_path, params: {category: {name: "sports"}} #user creates the new category
+    sign_in_as(@user, "password")
+    get new_category_path
+    assert_template 'categories/new'
+    assert_difference 'Category.count', 1 do
+      post categories_path, params: {category: {name: "sports"}}
       follow_redirect!
     end
-    assert_template 'categories/index' #user gets redirected to the index page
-    assert_match "sports", response.body #user shold see the new category displayed
+    assert_template 'categories/index'
+    assert_match "sports", response.body
   end
 
   test "invalid category submission results in failure" do
-    #sign_in_as(@user, "password")
+    sign_in_as(@user, "password")
     get new_category_path 
     assert_template 'categories/new' 
     assert_no_difference 'Category.count' do 
