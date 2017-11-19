@@ -13,8 +13,8 @@ This is a Blog app implementing the theory from the "Complete RoR Dev Course" @ 
 Tech specs
 ----------
 
-Ruby version: 2.3.1
-Rails verions: 5.1.4
-Hosting platform: Heroku
+* Ruby version: 2.3.1
+* Rails version: 5.1.4
+* Hosting platform: Heroku
 
 [Live preview](http://alpha-blog-martink.herokuapp.com/)
